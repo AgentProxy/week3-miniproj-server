@@ -6,7 +6,7 @@ const resourcesPath = path.join(__dirname, '../resources');
 const resultsPath = path.join(__dirname, '../result');
 const http = require('http');
 const server = http.createServer(app);
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 app.use('/resources', express.static(resourcesPath));
