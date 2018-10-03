@@ -1,15 +1,25 @@
 let menuOpen = false;
-
+const menuLinks = document.querySelector('.menu-links');
+const nav = document.querySelector('.navbar');
 const views = {
     setupEventListener: function(){
         const menuButton = document.querySelector('.toggle-button');
+        const tabLinks = document.querySelectorAll('.tab-links')
         menuButton.addEventListener('click',() => {
             this.openMenu();
         });
+        tabLinks.forEach((tabLink) => {
+            tabLink.addEventListener('click',(e) => {
+                this.openDropDown(e);
+            })
+        });
         window.addEventListener('resize', () => views.fixNavbar());
     },
+    openDropDown: function(e){
+        e.preventDefault();
+        menuLinks.style.height = "500px";
+    },
     openMenu: function(){
-        const menuLinks = document.querySelector('.menu-links');
         menuOpen = !menuOpen;
         if(menuOpen){
             menuLinks.classList.add('menu-links-open');
@@ -24,7 +34,6 @@ const views = {
         }
     },
     fixNavbar: function(){
-        const nav = document.querySelector('.navbar');
         const nextElement = nav.nextElementSibling;
         nextElement.style.paddingTop = nav.offsetHeight + 'px';        //setting carousel below the nav bar
     },

@@ -259,7 +259,7 @@ footer{
         height: 0;
         width: 0;
         order: 4;
-        transition: height 1s ease;
+        transition: height 0.3s ease;
     }
 
     .menu-links-open{
@@ -320,23 +320,27 @@ footer{
         display: block;
         transform: translate(20px, 20px);
     }
-    
+
     .events-tab:hover .events-sub,
     .sublink-2018:hover .submenu-2018, 
     .sublink-2016:hover .submenu-2016, 
     .sublink-subic:hover .submenu-subic, 
     .sublink-mckinley:hover .submenu-mckinley{
-        width: 100%;
         opacity: 1;
+        z-index: 0;
+        position: relative;
+        display: inline;
+
+    }
+    .events-tab li{
+        padding-left: 0;
+        padding-right: 0; 
+        text-align: center;
     }
     
     .submenu{
         left: 0px;
-        top: 120px;
-    }
-
-    .submenu-2016, .submenu-mckinley{
-        top: 63px;
+        top: 30px;
     }
 }
 
