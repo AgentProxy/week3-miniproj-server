@@ -1,0 +1,265 @@
+.grid-container{
+    display: grid;
+    grid-template-rows: repeat(12,auto);
+    height: 100%;
+    /* grid-template-areas: 
+    "n n n n n n n n n n n n"
+    "c c c c c c c c c c c c"
+    "e e e e e e e e e e e e"
+    "m m m m m m m m m m m m"
+    "s s s s s s s s s s s s"
+    "f f f f f f f f f f f f"; */
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: titillium_webregular;
+}
+
+.grid-container{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.carousel{
+    /* grid-area: c; */
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-image{
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+}
+
+.carousel-text{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    border-left: solid 10px white;
+    font-size: 2em;
+    line-height: 1;
+    font-weight: bold;
+    margin-left: 5%;
+    font-family: oswaldbold;
+    text-shadow: 0 0 12px rgba(0, 0, 0, .6);
+}
+
+.carousel-text > *{
+    margin: 0;
+    margin-left: 10px;
+}
+
+#carousel-image-1{
+    background-image: url("../resources/images/PRUride_Jumbing.jpg");
+}
+#carousel-image-2{
+    background-image: url("../resources/images/PRUride_London_raffle_winner.jpg");
+}
+#carousel-image-3{
+    background-image: url("../resources/images/PRUride_medals.jpg");
+}
+#carousel-image-4{
+    background-image: url("../resources/images/PRUride_Mini.jpg");
+}
+#carousel-image-5{
+    background-image: url("../resources/images/PRUride_Morales.jpg");
+}
+#carousel-image-6{
+    background-image: url("../resources/images/PRUride_Prado_Salamat.jpg");
+}
+#carousel-image-7{
+    background-image: url("../resources/images/PRUride_Brompton.jpg");
+}
+#carousel-image-8{
+    background-image: url("../resources/images/PRUride_cover.jpg");
+}
+#carousel-image-9{
+    background-image: url("../resources/images/PRUride_Coryn.jpg");
+}
+#carousel-image-10{
+    background-image: url("../resources/images/PRUride_family_2.jpg");
+}
+#carousel-image-11{
+    background-image: url("../resources/images/PRUride_Gretchen.jpg");
+}
+
+.present{
+    height: 80vh;
+    width: 100%;
+    opacity: 1;
+}
+
+.events-index{
+    background-color: rgb(163, 7, 54);
+    color:white;
+    width: 100%;
+    height: 200px;
+}
+
+.events-index-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-arrows{
+    text-decoration: none;
+    color: white;
+}
+
+.event-arrows > i{
+    font-size: 40px;
+}
+
+.event-index{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.event-index-events{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.event-index-events p{
+    padding: 0;
+    margin: 0;
+}
+
+.event-index-events.show{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.event-index-container h2{
+    text-align: center;
+}
+
+.event-container > a{
+    text-decoration: none;
+    color: white
+}
+
+.news{
+    width: 100%;
+    /* grid-area: m; */
+    margin-bottom: 5%;
+}
+
+.news-container{
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-title{
+    height: 100px;
+    border-left: solid 10px rgb(168,168,168)
+}
+
+.news-title > h1{
+    margin: 0 0 0 30px;
+    top: 60%;
+    position: relative;
+    font-family: "oswaldbold";
+}
+
+.news-articles{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-articles > a{
+    text-decoration: none;
+    color: black;
+}
+
+.news-articles > .article:last-child{
+    border-bottom: 0;
+}
+
+.article{
+    background-color: rgb(231, 233, 231);
+    width: 100%;
+    height: 100%;
+    border-bottom: solid rgb(162, 163, 162) 1px;
+    display: flex;
+    flex-direction: row;
+    line-height: 1;
+}
+
+.article-thumbnail{
+    margin: 10px 0 10px 10px;
+    width: 128px;
+    height: 128px;
+}
+
+.article-text{
+    padding: 0 2% 0 2%; 
+    position: relative;
+    left:0px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.article-text > * {
+    margin: 1% 0 1% 0;
+}
+
+.article-text > h3{
+    font-family: "titillium_webbold";
+    color:rgb(100,100,100);
+    text-transform: uppercase;
+    /* font-size: vw; */
+}
+
+.article-text > h3 + p{
+    font-style: italic; 
+}
+
+@media (max-width: 1024px){
+    .links-header{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .events-index-container{
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .events-index{
+        height: 400px;
+    }
+
+    .event-index{
+        width: 80%;
+    }
+    
+}
+

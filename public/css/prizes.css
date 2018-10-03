@@ -1,0 +1,169 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+h3{
+    font-size: 1.6em;
+    font-weight: 400;
+}
+
+.breadcrumbs{
+    background-color: rgb(161, 26, 37);
+    width: 100%;
+    height: 150px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.breadcrumbs > a{
+    position: relative;
+    left: 5%;
+    top: 40%;
+    text-decoration: none;
+    color: white;
+    margin: auto;
+}
+
+.breadcrumbs > a:last-child{
+    border-left: solid 1.5px white;
+    padding-left: 5px;
+}
+
+.content-container{
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.overflow-container{
+    position: relative;
+    top: -40px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+.content-title{
+    border-left: solid 10px grey;
+    width: 100%;
+    height: 75px;
+    position: relative;
+}
+
+.content-title > h1{
+    margin: 0 0 0 30px;
+    top: 60%;
+    position: relative;
+    font-family: "oswaldbold";
+    font-size: 1.45em;
+    font-weight: 400;
+}
+
+.content{
+    padding: 30px;
+}
+
+.content p{
+    font-size: 1.1em;
+}
+
+.prize{
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.prize-header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    cursor: pointer;
+}
+
+.prize-title > a{
+    font-family: "titillium_webregular";
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+}
+
+.arrow-accordion{ 
+    font-size: 45px;
+    color: black;
+    font-weight: bold;
+    transition: transform 0.5s ease;
+}
+
+.arrow-accordion-div{
+    padding-top: 5%;
+}
+
+.arrow-accordion.active{
+    transform: rotate(180deg);
+}
+
+.prize-content{
+    max-height: 0px;
+    transition: max-height 0.25s ease-out;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.content ul{
+    list-style-type: none;
+}
+
+.content ul > li:before{
+    content: " -   ";
+    white-space: pre;
+}
+
+.prize-lists{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.prize-lists > ol{
+    width: 150px;
+}
+
+.prize-lists > ol > li{
+    text-align: justify;
+}
+
+.prize-lists > ol > h5{
+    margin: 0 0 0 -10px;
+    font-size: 1.1em;
+    font-family: titillium_webbold;
+    font-weight: 500;
+}
+
+.prizes-mechanics ol > li {
+    font-size: 18px;
+}
+
+@media (max-width: 768px){
+    .content-container{
+        width: 100%;
+    }
+    .prize-lists{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+}

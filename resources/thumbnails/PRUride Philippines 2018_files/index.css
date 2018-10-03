@@ -1,0 +1,550 @@
+@font-face{
+    font-family: titillium_webbold;
+    src: url("../resources/fonts/TitilliumWeb-Bold.woff");
+}
+@font-face{
+    font-family: titillium_webregular;
+    src: url("../resources/fonts/TitilliumWeb-Regular.woff");
+}
+@font-face {
+    font-family: oswaldbold;
+    src: url("../resources/fonts/oswald/Oswald-Bold.ttf");
+}
+
+.grid-container{
+    display: grid;
+    grid-template-rows: repeat(12,auto);
+    height: 100%;
+    grid-template-areas: 
+    "n n n n n n n n n n n n"
+    "c c c c c c c c c c c c"
+    "e e e e e e e e e e e e"
+    "m m m m m m m m m m m m"
+    "s s s s s s s s s s s s"
+    "f f f f f f f f f f f f";
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: titillium_webregular;
+}
+
+.grid-container{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.navbar{
+    background-color: white;
+    grid-area: n;
+    padding: 10px 20px 10px 20px;
+    border-bottom: solid rgb(173, 35, 1) 2px;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu-links{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    font-size: 1.5vw;
+    order: 2;
+    padding: 0px;
+}
+
+.menu-links li a{
+    text-decoration: none;
+    color: gray;
+    padding: 15px;
+    text-align: center;
+}
+
+.menu-links li a:hover{
+    color: rgb(82, 81, 81);
+}
+
+.navbar > .logo-header{
+    order: 1;
+}
+
+.logo-header > img{
+    width: 250px;
+    height: 53px;
+}
+
+.links-header{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    order: 3;
+    margin: 0;
+}
+
+.links-header i{
+    font-size: 20px;
+    color: grey;
+}
+
+.links-header > a{
+    padding: 10px;
+}
+
+.register-mobile{
+    display: none;
+    order: 2;
+    background-color: grey;
+    margin: auto;
+    padding: 10px;
+}
+
+.register-mobile > a{
+    text-decoration: none;
+    color: white;
+}
+
+.toggle{
+    display: none;
+    margin: auto;
+    order: 3;
+}
+
+.toggle > a, .toggle img{
+    width: 40px;
+    height: 40px;
+}
+
+.carousel{
+    grid-area: c;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-image{
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+}
+
+.carousel-text{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    border-left: solid 10px white;
+    font-size: 2em;
+    line-height: 1;
+    font-weight: bold;
+    margin-left: 5%;
+    font-family: oswaldbold;
+    text-shadow: 0 0 12px rgba(0, 0, 0, .6);
+}
+
+.carousel-text > *{
+    margin: 0;
+    margin-left: 10px;
+}
+
+#carousel-image-1{
+    background-image: url("../resources/images/PRUride_Jumbing.jpg");
+}
+#carousel-image-2{
+    background-image: url("../resources/images/PRUride_London_raffle_winner.jpg");
+}
+#carousel-image-3{
+    background-image: url("../resources/images/PRUride_medals.jpg");
+}
+#carousel-image-4{
+    background-image: url("../resources/images/PRUride_Mini.jpg");
+}
+#carousel-image-5{
+    background-image: url("../resources/images/PRUride_Morales.jpg");
+}
+#carousel-image-6{
+    background-image: url("../resources/images/PRUride_Prado_Salamat.jpg");
+}
+#carousel-image-7{
+    background-image: url("../resources/images/PRUride_Brompton.jpg");
+}
+#carousel-image-8{
+    background-image: url("../resources/images/PRUride_cover.jpg");
+}
+#carousel-image-9{
+    background-image: url("../resources/images/PRUride_Coryn.jpg");
+}
+#carousel-image-10{
+    background-image: url("../resources/images/PRUride_family_2.jpg");
+}
+#carousel-image-11{
+    background-image: url("../resources/images/PRUride_Gretchen.jpg");
+}
+
+.active{
+    height: 80vh;
+    width: 100%;
+    opacity: 1;
+}
+
+.events-index{
+    grid-area: e;
+    background-color: rgb(163, 7, 54);
+    color:white;
+    width: 100%;
+    height: 100%;
+}
+.events-index-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.event-arrows{
+    text-decoration: none;
+    color: white;
+}
+
+.event-arrows > i{
+    font-size: 40px;
+}
+
+.event-index{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.event-index-events{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.event-index-events.show{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.event-index-container h2{
+    text-align: center;
+}
+
+.event-container > a{
+    text-decoration: none;
+    color: white
+}
+
+
+/* 
+.events{
+    grid-area: e;
+    background-color: rgb(163, 7, 54);
+    color:white;
+    width: 100%;
+    height: 100%;
+}
+
+.events-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+    margin-left: 20%;
+}
+
+.events-buttons{
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.events-buttons > img{
+    width: 30px;
+    height: 30px;
+}
+
+.event{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.event > div{
+    width: 200px;
+} */
+
+.news{
+    width: 100%;
+    grid-area: m;
+    margin-bottom: 5%;
+}
+
+.news-container{
+    width: 90%;
+    background-color: white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-title{
+    height: 100px;
+    border-left: solid 10px rgb(168,168,168)
+}
+
+.news-title > h1{
+    margin: 0 0 0 30px;
+    top: 60%;
+    position: relative;
+    font-family: "oswaldbold";
+}
+
+.news-articles{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-articles > a{
+    text-decoration: none;
+    color: black;
+}
+
+.news-articles > .article:last-child{
+    border-bottom: 0;
+}
+
+.article{
+    background-color: rgb(231, 233, 231);
+    width: 100%;
+    height: 100%;
+    border-bottom: solid rgb(162, 163, 162) 1px;
+    display: flex;
+    flex-direction: row;
+    line-height: 1;
+}
+
+.article-thumbnail{
+    margin: 10px 0 10px 10px;
+    width: 128px;
+    height: 128px;
+}
+
+.article-text{
+    padding: 0 2% 0 2%; 
+    position: relative;
+    left:0px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.article-text > * {
+    margin: 1% 0 1% 0;
+}
+
+.article-text > h3{
+    font-family: "titillium_webbold";
+    color:rgb(100,100,100);
+    text-transform: uppercase;
+    /* font-size: vw; */
+}
+
+.article-text > h3 + p{
+    font-style: italic; 
+}
+
+.sponsors{
+    background-color: rgb(163, 7, 54);
+    width: 100%;
+    height: 100%;
+    grid-area: s;    
+}
+
+.banners-div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    border-bottom: solid 1.5px white;
+}
+
+.banners{
+    width: 20vw;
+    height: 15vh;
+    padding: 5px;
+}
+
+footer{
+    grid-area: f;
+    background-color: rgb(182, 182, 182);
+    padding: 5% 0 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.links-footer{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.links-footer > a{
+    margin: 0 5px 0 5px;
+}
+
+.links-footer i{
+    color: white;
+    border: solid white 1px;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.logo-footer{
+    padding-top: 4%;
+}
+
+.contacts > p{
+    color: white;
+    font-family: titillium_webregular;
+    margin: 0;
+}
+
+@media (max-width: 1024px){
+    .links-header{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .banners{
+        width: 130px;
+    }
+}
+
+@media (max-width: 768px){
+    .contacts > p{
+        text-align: center;
+    }
+
+    .banners{
+        /* width: 200px; */
+    }
+
+    .events-index-container{
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .event-index{
+        width: 80%;
+    }
+
+    footer{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    footer > *{
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .links-header{
+        display: none;
+    }
+
+    .logo-header{
+        content:url("../resources/images/pruride_logo_mobile.png");
+        width: 64px;
+        height: 48px;
+        display: initial;
+        order: 1;
+        margin-left: 5%;
+    }
+
+    .menu-links{
+        display: block;
+        height: 0;
+        width: 0;
+        order: 4;
+        transition: height 1s ease;
+    }
+
+    .menu-links-open{
+        position: relative;
+        flex-basis: 100%;
+        margin: 0;
+    }
+
+    .menu-links-open > li > a{
+        display: block;
+        font-size: 15px;
+        border-bottom: solid 1px grey;
+        background-color:white;
+    }
+
+    .menu-links-open > li > a:active{
+        background-color: rgb(73, 73, 73);
+    }
+
+    .menu-links-open > li:last-child > a{
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .navbar{
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 0;
+        padding-right: 0;  
+        width: 100%;
+    }
+
+    .register-mobile{
+        display: initial;
+        padding: 10px;
+        order: 2;
+        margin-right: 0%;
+        font-weight: bold;
+    }
+
+    .toggle{
+        display: initial;
+        order: 3;
+        margin-right: 10%;
+    }
+
+    .links-footer i{
+        font-size: 20px;
+    }
+
+}
+

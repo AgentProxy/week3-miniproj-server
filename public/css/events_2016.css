@@ -1,0 +1,167 @@
+
+html,body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+}
+
+.breadcrumbs{
+    background-color: rgb(161, 26, 37);
+    width: 100%;
+    height: 150px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.breadcrumbs > a{
+    position: relative;
+    left: 5%;
+    top: 40%;
+    text-decoration: none;
+    color: white;
+    margin: auto;
+}
+
+.breadcrumbs > a:last-child{
+    border-left: solid 1.5px white;
+    padding-left: 5px;
+}
+
+.content-container{
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.overflow-container{
+    position: relative;
+    top: -40px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+.content-title{
+    border-left: solid 10px grey;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+
+.content-title > h1{
+    margin: 0 0 0 30px;
+    top: 60%;
+    position: relative;
+    font-family: "oswaldbold";
+    font-size: 1.45em;
+}
+
+.carousel{
+    margin-top: 3%;
+}
+
+.carousel-image{
+    background-size: 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 0%;
+    width: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+}
+
+#carousel-image-1{
+    background-image: url("../resources/images/imgslider11.jpg");
+}
+
+#carousel-image-2{
+    background-image: url("../resources/images/i-1.png");
+}
+
+#carousel-image-3{
+    background-image: url("../resources/images/i_8.jpg");
+}
+
+
+.present{
+    height: 50vh;
+    width: 100%;
+    opacity: 1;
+}
+
+.content{
+    padding: 30px;
+}
+
+.events{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content p{
+    font-size: 1.1em;
+}
+
+.content ul{
+    list-style-type: none;
+}
+
+.content ul > li:before{
+    content: " -   ";
+    white-space: pre;
+}
+
+.event{
+    width: 45%;
+    padding-bottom: 5%;
+}
+
+.event > h3{
+    font-size: 1.6em;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.images > img{
+    width: 45%;
+    height: 45%;
+    padding-bottom: 5%;
+}
+
+.event a{
+    text-decoration: none;
+    color: red;
+}
+
+@media (max-width: 768px){
+    .content-container{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .events{
+        flex-direction: column;
+        /* align-items: center; */
+    }
+    .event{
+        width: 100%;
+    }
+    .images{
+        flex-direction: column;
+        align-items: center;
+    }
+}
